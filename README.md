@@ -8,6 +8,38 @@
   - [Development Features](#development-features)
 - [Resources](#resources)
 
+## Assessment
+
+### Overview
+
+As a front-end developer for a financial services company, you will be expected to demonstrate proficiency in AngularJS (version 1.x). The following assessment is designed to test your understanding of AngularJS controllers, services, and common AngularJS directives.
+
+Your task is to create a simple banking app. The app should consist of 3 main pages - an account list view, an account detailed view, and a popup containing a form. We have provided a service that returns the bank account list & details that you can use. The app should include functionalities outlined in the acceptance criteria below, but we also strongly encourage you to follow the technical criteria below to showcase good coding practices, intuitive user experience and pleasant visual aesthetics.
+
+### Acceptance Criteria
+
+As an admin user, I should be able to:
+  - See a list of bank accounts that display the account name, owner name, created date, checking amount, savings amount. The column values should be formatted appropriately for date and currency values. Ex: $1,200.52, 02-01-2025.
+  - Filter the list via a string query that matches ONLY any of the above column names and return a matching sub-list. Sort the list by clicking on any of the 5 column names above.
+  - Sort the list by clicking on any of the 5 column names above.
+  - Remove entries from the list via a dedicated delete button.
+  - Add new entries to the list via a dedicated button which opens a popup containing a simple form that takes in account name, owner name, checking amount, savings amount. The created date will be automatically generated at the time the entry itself is created.
+    - I can click on any entry from the list view and be taken to a new page containing the detailed view of the account.The detailed view's URL should reference the accountId to retrieve the corresponding account details object included in the detailedAccountList and display the information on the page.
+    - Data to be displayed: Owner name, owner age, owner's FICO score, account's checking and savings amounts, and a list of account activity.
+
+### Technical Criteria
+
+We would like to see:
+  - Good development practices that provide clear and concise frontend code.
+  - A responsive design that can adapt to multiple screen sizes (960px <-> 1920px).
+  - SCSS styling from the provided TailwindCSS library.
+  - Thoughts and consideration to the overall user experience & visual aesthetics of the app.
+
+### Notes
+
+  - The project is written in TypeScript to provide you with good intellisense. However, you are not required to utilize TypeScript (although you may do so if you prefer).
+
+
 ## Getting Started
 
 ### Prerequisites
