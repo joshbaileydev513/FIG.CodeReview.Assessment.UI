@@ -61,7 +61,7 @@ We would like to see:
 ### Setup
 
 - Clone the repository.
-  - [ - Repository]()
+  - [Repository](https://github.com/andrewbarnettfig/FIG.CodeReview.Assessment.UI)
 - Open the repository in Visual Studio Code.
 - Checkout the `main` branch.
 - Open a terminal and navigate inside of the `UI` folder.
@@ -104,4 +104,4 @@ This project provides several features that developers can use when building an 
   - Reference point with detailed information about each UI Router feature.
 - [Angular State Inspector](https://chromewebstore.google.com/detail/angular-state-inspector/nelkodgfpddgpdbcjinaaalphkfffbem)
   - Highly-recommended browser extension that provides a simple view of an AngularJS application's internal state at runtime.
-- [ - Repository]()
+- [Repository](https://github.com/andrewbarnettfig/FIG.CodeReview.Assessment.UI)
