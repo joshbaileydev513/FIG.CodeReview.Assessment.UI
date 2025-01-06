@@ -2,6 +2,11 @@
 
 ## Table of Contents
 
+- [Assessment](#assessment)
+    - [Overview](#overview)
+    - [Acceptance Criteria](#acceptance-criteria)
+    - [Technical Criteria](#technical-criteria)
+    - [Notes](#notes)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
