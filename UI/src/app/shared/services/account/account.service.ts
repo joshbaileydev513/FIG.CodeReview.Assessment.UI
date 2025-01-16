@@ -36,19 +36,49 @@ export class AccountService {
      * @param ownerId The ownerId associated with the accounts.
      * @returns A list of accounts associated with the ownerId provided.
      */
-    public getAccountDetails(ownerId: number): IPromise<AccountDetail[]> {
-        // Simulate an API call by introducing an artificial delay.
-        return this.$timeout(this.getRandomDelayMilliseconds())
-            .then(() => {
-                const filteredAccounts = this.accountDetailList.filter((account) => {
-                    return account.ownerId === ownerId;
-                });
+    
+    // need to figure out if I want to show just one account with the details or show multiple with the individual owner
+    // public getAccountDetails(ownerId: number): IPromise<AccountDetail[]> {
+    //     // Simulate an API call by introducing an artificial delay.
+    //     return this.$timeout(this.getRandomDelayMilliseconds())
+    //         .then(() => {
+    //             const filteredAccounts = this.accountDetailList.filter((account) => {
+    //                 return account.ownerId === ownerId;
+    //             });
 
-                if (filteredAccounts.length > 0) {
-                    return filteredAccounts;
-                } else {
-                    return this.$q.reject("Accounts not found for the given owner ID.");
-                }
-            });
-    }
+    //             if (filteredAccounts.length > 0) {
+    //                 return filteredAccounts;
+    //             } else {
+    //                 return this.$q.reject("Accounts not found for the given owner ID.");
+    //             }
+    //         });
+    // }
+
+    public getAccountDetailById(accountId: number): IPromise<AccountDetail> {
+        return this.$timeout(this.getRandomDelayMilliseconds()).then(() => {
+          const account = this.accountDetailList.find(
+            (a) => a.accountId === accountId
+          );
+          if (account) {
+            return account;
+          } else {
+            return this.$q.reject("Account not found for the given account ID.");
+          }
+        });
+      }
+      
+
+    public deleteAccount(accountId: number): IPromise<void> {
+        return this.$timeout(this.getRandomDelayMilliseconds())
+          .then(() => {
+            this.accountSummaryList = this.accountSummaryList.filter(
+              (acct) => acct.accountId !== accountId
+            );
+            // If you want to remove detail references too:
+            this.accountDetailList = this.accountDetailList.filter(
+              (acct) => acct.accountId !== accountId
+            );
+          });
+      }
+      
 }

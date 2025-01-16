@@ -1,16 +1,25 @@
 import { ILocationProvider } from "angular";
-import { UrlService } from "@uirouter/angularjs";
+import { StateProvider, UrlRouterProvider } from "@uirouter/angularjs"; // <== use these
+import { accountStates } from "../../features/account/account.state";
 
 export const routeConfigFn = configFn;
 
-configFn.$inject = ["$urlServiceProvider", "$locationProvider"];
-function configFn($urlServiceProvider: UrlService, $locationProvider: ILocationProvider) {
-    // Redirect to the home page if no other route matches.
-    $urlServiceProvider.rules.otherwise("/home");
+// We now inject $stateProvider and $urlRouterProvider (matching the new types).
+configFn.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
+function configFn(
+  $stateProvider: StateProvider,
+  $urlRouterProvider: UrlRouterProvider,
+  $locationProvider: ILocationProvider
+) {
+  // Default routes
+  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.when("/", "/home");
+  $urlRouterProvider.when("", "/home");
 
-    // Redirect to the home page if the URL doesn't include a path segment.
-    $urlServiceProvider.rules.when("/", "/home");
-    $urlServiceProvider.rules.when("", "/home");
+  $locationProvider.html5Mode({ enabled: true, requireBase: false });
 
-    $locationProvider.html5Mode({ enabled: true, requireBase: false });
+  // Register the account states using $stateProvider
+  accountStates.forEach((state) => {
+    $stateProvider.state(state);
+  });
 }
