@@ -1,90 +1,15 @@
-<section class="h-full flex flex-col gap-5 p-5 text-gray-700 bg-zinc-100">
-    <h1 class="text-lg font-bold">Overview</h1>
-    <p>
-        As a front-end developer for a financial services company, you will be
-        expected to demonstrate proficiency in AngularJS (version 1.x). The
-        following assessment is designed to test your understanding of AngularJS
-        controllers, services, and common AngularJS directives.
-    </p>
-    <p class>
-        Your task is to create a simple banking app. The app should consist of an 
-        account list view, an account detail view, and a popup containing a form. 
-        We have provided a service that can be used to retrieve account data.
-        The app should satisfy each point outlined in the <strong>acceptance 
-        criteria</strong>, but we also strongly encourage you to follow the
-        <strong>technical criteria</strong> to showcase good coding practices, 
-        intuitive user experience, and pleasant visual aesthetics.
-    </p>
-    <h1 class="text-lg font-bold">Acceptance Criteria:</h1>
-    <p>As an application user, I should be able to:</p>
-    <ul class="ml-10 flex flex-col gap-3">
-        <li class="list-decimal">
-            See a list of bank accounts that displays the account name, owner name,
-            created date, checking amount, and savings amount. The column values should be
-            formatted appropriately for date and currency values. Ex: $1,200.52,
-            02-01-2025.
-        </li>
-        <li class="list-decimal">
-            Filter the list based on a string query. 
-            The filter should return a subset of the full list.
-            Matching should be based on whether a column value contains the filter term.
-            Filter results should ensure there are no duplicates.
-            Ex: If the filter term is "abc", the list should be filtered to display accounts 
-            containing "abc" in one of their columns.
-        </li>
-        <li class="list-decimal">
-            Sort the list by clicking on any of the column headers.
-        </li>
-        <li class="list-decimal">
-            Remove entries from the list via a dedicated delete button.
-        </li>
-        <li class="list-decimal">
-            Add new entries to the list via a dedicated button.
-            Clicking the button should open a popup containing a simple form that takes in 
-            account name, owner name, checking amount, and savings amount. 
-            The created date will be automatically generated at the time the entry itself is created.
-        </li>
-        <li class="list-decimal">
-            I can click on any entry from the list view and be taken to a new page
-            containing the detailed view of the account.
-            <ul class="ml-10 flex flex-col gap-3">
-                <li class="list-disc">
-                    The detailed view's URL should reference the
-                    <code class="bg-zinc-300">accountId</code> to retrieve the
-                    corresponding account details object included in the
-                    <code class="bg-zinc-300">detailedAccountList</code> and display the
-                    information on the page.
-                </li>
-                <li class="list-disc">
-                    Data to be displayed: Owner name, owner age, owner's FICO score,
-                    account's checking and savings amounts, and a list of account
-                    activity.
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h1 class="text-lg font-bold">Technical Criteria:</h1>
-    <p>We would like to see:</p>
-    <ul class="ml-10 flex flex-col gap-3">
-        <li class="list-decimal">
-            Good development practices that provide clear and concise frontend code.
-        </li>
-        <li class="list-decimal">
-            A responsive design that can adapt to multiple screen sizes (960px <->
-                1920px).
-        </li>
-        <li class="list-decimal">
-            Styling achieved using TailwindCSS.
-        </li>
-        <li class="list-decimal">
-            Thoughts and consideration to the overall user experience & visual
-            aesthetics of the app.
-        </li>
-    </ul>
-    <h1 class="text-lg font-bold">Notes:</h1>
-    <ul class="ml-10 flex flex-col gap-3">
-        <li class="list-decimal">
-            The project is written in TypeScript to provide you with good intellisense. However, you are not required to utilize TypeScript (although you may do so if you prefer).
-        </li>
-    </ul>
-</section>
+<section class="w-full min-h-screen flex flex-col bg-gray-100">
+    <div class="flex-grow flex items-center justify-center bg-blue-600 text-white p-8">
+      <div class="max-w-2xl text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Welcome to Financial Independence Group, Inc.
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed">
+          We’re an industry leader working with independent financial advisors and
+          insurance companies, specializing in annuities, long-term care, life insurance,
+          and much more.
+        </p>
+      </div>
+    </div>
+  </section>
+  
