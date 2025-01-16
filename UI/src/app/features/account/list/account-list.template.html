@@ -9,16 +9,47 @@
     />
   
     <table class="min-w-full bg-white shadow rounded overflow-hidden">
-      <thead>
-        <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
-          <th ng-click="$ctrl.setSort('accountName')">Account Name</th>
-          <th ng-click="$ctrl.setSort('ownerName')">Owner Name</th>
-          <th ng-click="$ctrl.setSort('createdDate')">Created Date</th>
-          <th ng-click="$ctrl.setSort('checkingAmount')">Checking</th>
-          <th ng-click="$ctrl.setSort('savingsAmount')">Savings</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+        <thead>
+            <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+              <th ng-click="$ctrl.setSort('accountName')">
+                Account Name
+                <span ng-if="$ctrl.sortColumn === 'accountName'">
+                  <span ng-if="!$ctrl.reverseSort">▲</span>
+                  <span ng-if="$ctrl.reverseSort">▼</span>
+                </span>
+              </th>
+              <th ng-click="$ctrl.setSort('ownerName')">
+                Owner Name
+                <span ng-if="$ctrl.sortColumn === 'ownerName'">
+                  <span ng-if="!$ctrl.reverseSort">▲</span>
+                  <span ng-if="$ctrl.reverseSort">▼</span>
+                </span>
+              </th>
+              <th ng-click="$ctrl.setSort('createdDate')">
+                Created Date
+                <span ng-if="$ctrl.sortColumn === 'createdDate'">
+                  <span ng-if="!$ctrl.reverseSort">▲</span>
+                  <span ng-if="$ctrl.reverseSort">▼</span>
+                </span>
+              </th>
+              <th ng-click="$ctrl.setSort('checkingAmount')">
+                Checking
+                <span ng-if="$ctrl.sortColumn === 'checkingAmount'">
+                  <span ng-if="!$ctrl.reverseSort">▲</span>
+                  <span ng-if="$ctrl.reverseSort">▼</span>
+                </span>
+              </th>
+              <th ng-click="$ctrl.setSort('savingsAmount')">
+                Savings
+                <span ng-if="$ctrl.sortColumn === 'savingsAmount'">
+                  <span ng-if="!$ctrl.reverseSort">▲</span>
+                  <span ng-if="$ctrl.reverseSort">▼</span>
+                </span>
+              </th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          
       <tbody>
         <tr
           ng-repeat="account in $ctrl.filteredAccounts() 
