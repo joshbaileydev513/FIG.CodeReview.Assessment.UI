@@ -64,4 +64,22 @@ export class AccountService {
           });
       }
       
+      public addAccount(newAccount: Partial<AccountSummary>): IPromise<void> {
+        return this.$timeout(this.getRandomDelayMilliseconds()).then(() => {
+          const newId = Math.floor(Math.random() * 100000) + 100; // naive unique ID
+          const dateString = new Date().toISOString().split("T")[0]; // e.g. "2025-02-01"
+      
+          const account: AccountSummary = {
+            accountId: newId,
+            accountName: newAccount.accountName || "",
+            ownerName: newAccount.ownerName || "",
+            checkingAmount: newAccount.checkingAmount || 0,
+            savingsAmount: newAccount.savingsAmount || 0,
+            createdDate: dateString,
+          };
+      
+          // push to the in-memory array
+          this.accountSummaryList.push(account);
+        });
+      }
 }

@@ -1,0 +1,63 @@
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
+      <h3 class="text-xl font-semibold mb-4">Add New Account</h3>
+  
+      <form ng-submit="$ctrl.handleAddAccount()" novalidate>
+        <div class="mb-3">
+          <label class="block mb-1 text-sm font-medium">Account Name</label>
+          <input
+            type="text"
+            ng-model="$ctrl.newAccount.accountName"
+            class="border rounded p-2 w-full"
+            required
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label class="block mb-1 text-sm font-medium">Owner Name</label>
+          <input
+            type="text"
+            ng-model="$ctrl.newAccount.ownerName"
+            class="border rounded p-2 w-full"
+            required
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label class="block mb-1 text-sm font-medium">Checking Amount</label>
+          <input
+            type="number"
+            ng-model="$ctrl.newAccount.checkingAmount"
+            class="border rounded p-2 w-full"
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label class="block mb-1 text-sm font-medium">Savings Amount</label>
+          <input
+            type="number"
+            ng-model="$ctrl.newAccount.savingsAmount"
+            class="border rounded p-2 w-full"
+          />
+        </div>
+  
+        <!-- Buttons -->
+        <div class="flex justify-end gap-2 mt-4">
+          <button
+            type="button"
+            class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+            ng-click="$ctrl.closeModal()"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+          >
+            Add Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

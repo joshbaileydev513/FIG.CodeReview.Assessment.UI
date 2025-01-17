@@ -1,5 +1,5 @@
 import angular from "angular";
-import "@uirouter/angularjs"; // optional import if you need side effects, but not strictly required
+import "@uirouter/angularjs";
 import { AccountService } from "./services";
 
 export {
@@ -11,6 +11,6 @@ export {
 
 export const sharedModule = angular
   .module("shared", [
-    "ui.router"  // Just the string dependency
+    "ui.router" 
   ])
   .service(AccountService.serviceName, AccountService);
