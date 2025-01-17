@@ -67,14 +67,15 @@
                 <td>{{account.checkingAmount | currency}}</td>
                 <td>{{account.savingsAmount | currency}}</td>
                 <td>
-                    <button class="text-white bg-red-500 hover:bg-red-600 py-1 px-2 rounded"
-                        ng-click="$ctrl.deleteAccount(account.accountId)">
+                    <button class="bg-red-500 text-white px-4 py-2 rounded" ng-click="$ctrl.openDeleteModal(account)">
                         Delete
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
-
-    <!-- Could also have a button that opens the add account popup -->
+    <confirm-delete ng-if="$ctrl.showDeleteModal" item-label="$ctrl.deleteTargetLabel"
+        confirm-message="$ctrl.deleteConfirmMessage" on-cancel="$ctrl.cancelDelete()"
+        on-confirm="$ctrl.confirmDelete()">
+    </confirm-delete>
 </div>

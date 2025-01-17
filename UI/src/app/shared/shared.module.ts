@@ -1,6 +1,7 @@
 import angular from "angular";
 import "@uirouter/angularjs";
 import { AccountService } from "./services";
+import { confirmDeleteComponent } from "./components/confirm-delete/confirm-delete.component";
 
 export {
   AccountActivity,
@@ -10,7 +11,7 @@ export {
 } from "./services/index";
 
 export const sharedModule = angular
-  .module("shared", [
-    "ui.router" 
-  ])
-  .service(AccountService.serviceName, AccountService);
+  .module("shared", ["ui.router"])
+  .service(AccountService.serviceName, AccountService)
+  .component("confirmDelete", confirmDeleteComponent)
+  ;
