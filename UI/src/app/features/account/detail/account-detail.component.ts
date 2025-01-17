@@ -2,6 +2,7 @@ import { IComponentOptions, IController } from "angular";
 import { AccountService } from "../../../shared/services/account/account.service";
 import { AccountDetail } from "../../../shared/services/account/account-detail-model";
 import { StateParams } from "@uirouter/core";
+import "./account-detail.style.scss";
 
 class AccountDetailController implements IController {
   public accountDetail?: AccountDetail;

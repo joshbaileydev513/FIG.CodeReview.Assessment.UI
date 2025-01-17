@@ -1,0 +1,119 @@
+.account-list-container {
+    max-width: 1280px; // roughly 5xl in tailwind terms
+    margin: 0 auto;
+    padding: 1rem; 
+    margin-top: 1rem;
+  }
+  
+  .account-list-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .account-list-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem; 
+    }
+
+    .add-account-btn {
+      background-color: #00b4e9;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: rgba(0,180,233,0.8);
+      }
+    }
+
+  }
+  
+  .account-list-search input {
+    border: 1px solid #ccc; 
+    padding: 0.5rem;
+    width: 200px; 
+    font-size: 1rem;
+  }
+  
+  .account-list-table-wrapper {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .account-list-table {
+    width: 80vw;
+    border-collapse: separate;
+    text-align: center;
+    thead {
+      background-color: rgba(44, 44, 44, 0.87);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: auto auto;
+    }
+  
+    /* clickable columns for sorting */
+    .sortable-col {
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.87);
+      }
+    }
+  
+    .account-list-row {
+      border-bottom: 1px solid #ddd;
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+  
+  .account-link {
+    color: #00b4e9; 
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .delete-btn {
+    background-color: #ff0303;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: rgba(201, 25, 25, 0.8);
+    }
+  }
+  
+  /* Footer row for pagination + "Add Account" */
+  .account-list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  
+    .pagination {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+  
+      .pagination-btn {
+        background-color: #ccc;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        &:hover {
+          background-color: #bbb;
+        }
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  
