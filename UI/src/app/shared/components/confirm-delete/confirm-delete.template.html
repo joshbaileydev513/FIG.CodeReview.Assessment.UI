@@ -1,0 +1,33 @@
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-sm">
+      <h3 class="text-xl font-semibold mb-4">Confirm Deletion</h3>
+  
+      <!-- The main line referencing the itemLabel -->
+      <p ng-if="$ctrl.itemLabel">
+        Are you sure you want to delete <strong>{{$ctrl.itemLabel}}</strong>?
+      </p>
+  
+      <!-- The secondary message providing extra caution or context -->
+      <p ng-if="$ctrl.confirmMessage" class="mt-2">
+        {{$ctrl.confirmMessage}}
+      </p>
+  
+      <div class="flex justify-end gap-2 mt-4">
+        <button
+          type="button"
+          class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+          ng-click="$ctrl.cancel()"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
+          ng-click="$ctrl.confirm()"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+  
