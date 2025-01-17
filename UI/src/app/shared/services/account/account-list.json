@@ -108,6 +108,17 @@
       "interestRate": 2.2,
       "createdDate": "2020-08-01",
       "status": "Active"
+    },
+    {
+      "accountId": 11,
+      "accountName": "Checking Account",
+      "ownerName": "Steve Rogers",
+      "ownerId": 5,
+      "checkingAmount": 1000000,
+      "savingsAmount": 2000000,
+      "interestRate": 4.2,
+      "createdDate": "1933-07-04",
+      "status": "Active"
     }
   ]
   

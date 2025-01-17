@@ -37,23 +37,6 @@ export class AccountService {
      * @returns A list of accounts associated with the ownerId provided.
      */
     
-    // need to figure out if I want to show just one account with the details or show multiple with the individual owner
-    // public getAccountDetails(ownerId: number): IPromise<AccountDetail[]> {
-    //     // Simulate an API call by introducing an artificial delay.
-    //     return this.$timeout(this.getRandomDelayMilliseconds())
-    //         .then(() => {
-    //             const filteredAccounts = this.accountDetailList.filter((account) => {
-    //                 return account.ownerId === ownerId;
-    //             });
-
-    //             if (filteredAccounts.length > 0) {
-    //                 return filteredAccounts;
-    //             } else {
-    //                 return this.$q.reject("Accounts not found for the given owner ID.");
-    //             }
-    //         });
-    // }
-
     public getAccountDetailById(accountId: number): IPromise<AccountDetail> {
         return this.$timeout(this.getRandomDelayMilliseconds()).then(() => {
           const account = this.accountDetailList.find(

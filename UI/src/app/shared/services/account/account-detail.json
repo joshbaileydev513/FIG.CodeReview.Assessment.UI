@@ -12,8 +12,8 @@
       "ownerBirthdate": "1985-06-15",
       "ficoScore": 720,
       "activityTimeline": [
-        { "type": "deposit", "amount": 500, "date": "2023-01-01" },
-        { "type": "withdrawal", "amount": 200, "date": "2023-02-15" }
+        { "type": "Deposit", "amount": 500, "date": "2023-01-01" },
+        { "type": "Withdrawal", "amount": 200, "date": "2023-02-15" }
       ]
     },
     {
@@ -29,8 +29,8 @@
       "ownerBirthdate": "1990-08-20",
       "ficoScore": 740,
       "activityTimeline": [
-        { "type": "deposit", "amount": 1000, "date": "2023-01-10" },
-        { "type": "withdrawal", "amount": 500, "date": "2023-03-05" }
+        { "type": "Deposit", "amount": 1000, "date": "2023-01-10" },
+        { "type": "Withdrawal", "amount": 500, "date": "2023-03-05" }
       ]
     },
     {
@@ -46,8 +46,8 @@
       "ownerBirthdate": null,
       "ficoScore": 800,
       "activityTimeline": [
-        { "type": "deposit", "amount": 5000, "date": "2023-04-01" },
-        { "type": "withdrawal", "amount": 2000, "date": "2023-05-10" }
+        { "type": "Deposit", "amount": 5000, "date": "2023-04-01" },
+        { "type": "Withdrawal", "amount": 2000, "date": "2023-05-10" }
       ]
     },
     {
@@ -63,8 +63,8 @@
       "ownerBirthdate": "1985-06-15",
       "ficoScore": 720,
       "activityTimeline": [
-        { "type": "deposit", "amount": 1000, "date": "2023-01-20" },
-        { "type": "withdrawal", "amount": 500, "date": "2023-03-25" }
+        { "type": "Deposit", "amount": 1000, "date": "2023-01-20" },
+        { "type": "Withdrawal", "amount": 500, "date": "2023-03-25" }
       ]
     },
     {
@@ -80,8 +80,110 @@
       "ownerBirthdate": "1990-08-20",
       "ficoScore": 740,
       "activityTimeline": [
-        { "type": "deposit", "amount": 2000, "date": "2023-02-15" },
-        { "type": "withdrawal", "amount": 1000, "date": "2023-04-10" }
+        { "type": "Deposit", "amount": 2000, "date": "2023-02-15" },
+        { "type": "Withdrawal", "amount": 1000, "date": "2023-04-10" }
+      ]
+    },
+    {
+      "accountId": 6,
+      "accountName": "Corporate Checking",
+      "ownerName": "ACME Corp",
+      "ownerId": 3,
+      "checkingAmount": 20000,
+      "savingsAmount": 5000,
+      "interestRate": 1.2,
+      "createdDate": "2023-06-01",
+      "status": "Active",
+      "ownerBirthdate": null,
+      "ficoScore": 755,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 20000, "date": "2023-03-22" },
+        { "type": "Withdrawal", "amount": 5000, "date": "2023-03-23" }
+      ]
+    },
+    {
+      "accountId": 7,
+      "accountName": "Retirement Fund",
+      "ownerName": "Alice Brown",
+      "ownerId": 4,
+      "checkingAmount":1500 ,
+      "savingsAmount": 20000,
+      "interestRate": 3.0,
+      "createdDate": "2020-07-15",
+      "status": "Active",
+      "ownerBirthdate": "1969-12-25",
+      "ficoScore": 810,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 35000, "date": "2023-05-16" },
+        { "type": "Withdrawal", "amount": 10000, "date": "2023-05-18" }
+      ]
+    },
+    {
+      "accountId": 8,
+      "accountName": "Emergency Fund",
+      "ownerName": "Alice Brown",
+      "ownerId": 4,
+      "checkingAmount": 500,
+      "savingsAmount": 8000,
+      "interestRate": 1.5,
+      "createdDate": "2021-02-10",
+      "status": "Active",
+      "ownerBirthdate": "1969-12-25",
+      "ficoScore": 810,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 1000, "date": "2023-05-16" },
+        { "type": "Withdrawal", "amount": 500, "date": "2023-05-18" }
+      ]
+    },
+    {
+      "accountId": 9,
+      "accountName": "Vacation Savings",
+      "ownerName": "Jane Smith",
+      "ownerId": 2,
+      "checkingAmount": 300,
+      "savingsAmount": 7000,
+      "interestRate": 1.8,
+      "createdDate": "2022-03-22",
+      "status": "Active",
+      "ownerBirthdate": "1990-08-20",
+      "ficoScore": 740,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 7500, "date": "2023-07-08" },
+        { "type": "Withdrawal", "amount": 200, "date": "2023-07-08" }
+      ]
+    },
+    {
+      "accountId": 10,
+      "accountName": "Investment Fund",
+      "ownerName": "John Doe",
+      "ownerId": 1,
+      "checkingAmount": 4000,
+      "savingsAmount": 12000,
+      "interestRate": 2.2,
+      "createdDate": "2020-08-01",
+      "status": "Active",
+      "ownerBirthdate": "1985-06-15",
+      "ficoScore": 720,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 20000, "date": "2023-11-12" },
+        { "type": "Withdrawal", "amount": 4000, "date": "2023-11-15" }
+      ]
+    },
+    {
+      "accountId": 11,
+      "accountName": "Checking Account",
+      "ownerName": "Steve Rogers",
+      "ownerId": 5,
+      "checkingAmount": 1000000,
+      "savingsAmount": 2000000,
+      "interestRate": 4.2,
+      "createdDate": "1933-07-04",
+      "status": "Active",
+      "ownerBirthdate": "1918-07-04",
+      "ficoScore": 850,
+      "activityTimeline": [
+        { "type": "Deposit", "amount": 3000000, "date": "2012-05-05" },
+        { "type": "Withdrawal", "amount": 1000000, "date": "2012-05-15" }
       ]
     }
   ]
