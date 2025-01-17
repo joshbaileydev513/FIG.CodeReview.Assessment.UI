@@ -6,8 +6,9 @@ import "@uirouter/angularjs";
 import { homeModule } from "./features/index";
 import { sharedModule } from "./shared/shared.module";
 import { navbarModule } from "./shared/components/navbar/navbar.module";
-import { routeConfigFn } from "./shared/routing";
 import { accountModule } from "./features/account/account.module";
+
+import { routeConfigFn } from "./shared/routing";
 
 export default angular
   .module("app", [
@@ -15,7 +16,7 @@ export default angular
     homeModule.name,
     sharedModule.name,
     navbarModule.name,
-    accountModule.name 
+    accountModule.name
   ])
-  .config(routeConfigFn) 
+  .config(routeConfigFn)
   .name;
