@@ -1,19 +1,21 @@
-<div class="container mx-auto p-4" ng-if="$ctrl.accountDetail">
-    <h2 class="text-2xl font-bold mb-4">Account Detail</h2>
-    <div class="bg-white p-4 rounded shadow">
-  
+<div class="account-detail-container" ng-if="$ctrl.accountDetail">
+  <header class="account-header">
+    <h2>Account Detail</h2>
+  </header>
+  <main class="account-content">
+    <div class="content-box">
       <p><strong>Account Name:</strong> {{$ctrl.accountDetail.accountName}}</p>
       <p><strong>Owner Name:</strong> {{$ctrl.accountDetail.ownerName}}</p>
       <p><strong>Owner Birthdate:</strong> {{$ctrl.accountDetail.ownerBirthdate | date:'MM-dd-yyyy'}}</p>
       <p ng-if="$ctrl.ownerAge != null"><strong>Owner Age:</strong> {{$ctrl.ownerAge}}</p>
       <p><strong>FICO Score:</strong> {{$ctrl.accountDetail.ficoScore}}</p>
-  
-      <p class="mt-2"><strong>Checking:</strong> {{$ctrl.accountDetail.checkingAmount | currency}}</p>
+      <hr />
+      <p><strong>Checking:</strong> {{$ctrl.accountDetail.checkingAmount | currency}}</p>
       <p><strong>Savings:</strong> {{$ctrl.accountDetail.savingsAmount | currency}}</p>
-  
-      <div class="mt-4">
-        <h3 class="text-lg font-semibold mb-2">Account Activity</h3>
-        <ul class="list-disc ml-6">
+      <hr />
+      <div>
+        <h3>Account Activity</h3>
+        <ul>
           <li ng-repeat="activity in $ctrl.accountDetail.activityTimeline">
             <strong>{{activity.type}}:</strong> {{activity.amount | currency}} 
             on {{activity.date | date:'MM-dd-yyyy'}}
@@ -21,5 +23,5 @@
         </ul>
       </div>
     </div>
-  </div>
-  
+  </main>
+</div>

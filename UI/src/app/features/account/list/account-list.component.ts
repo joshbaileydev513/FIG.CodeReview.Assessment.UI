@@ -2,6 +2,8 @@ import { IComponentOptions, IController } from "angular";
 import { AccountService } from "../../../shared/services/account/account.service";
 import { AccountSummary } from "../../../shared/services/account/account-list-model";
 
+import "./account-list.style.scss";
+
 class AccountListController implements IController {
   public accounts: AccountSummary[] = [];
   public searchQuery = "";

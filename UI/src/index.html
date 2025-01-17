@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US" ng-app="app">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body class="bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col">
-        <navbar-component></navbar-component>
-        <div class="flex-grow">
-            <ui-view class="w-full h-full"></ui-view>
-        </div>
-    </div>
+<body class="w-screen h-screen flex flex-col">
+    <navbar-component></navbar-component>
+    <ui-view class="flex flex-col justify-center items-center w-full h-full"></ui-view>
 </body>
 
 </html>

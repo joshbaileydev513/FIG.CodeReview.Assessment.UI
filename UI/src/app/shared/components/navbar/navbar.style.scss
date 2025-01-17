@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #1b5375;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    font-family: "Gotham Light", "Gotham Book", Gotham, Montserrat, "Open Sans", Roboto, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 5vw;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    gap: 1rem; 
+    list-style: none;
+    margin-right: 5vw; 
+    padding: 0;
+  }
+  
+  .navbar-link {
+    text-decoration: none; 
+    color: #fff;
+    padding: 0.4rem 0.75rem; 
+    border-radius: 0.25rem; 
+    transition: background-color 0.2s, color 0.2s;
+  
+    &:hover {
+      background-color: #fff;
+      color: #1b5375;
+    }
+  }
+  
