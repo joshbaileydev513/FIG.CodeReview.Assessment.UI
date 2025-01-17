@@ -14,6 +14,9 @@ class AccountListController implements IController {
 
   public deleteConfirmMessage = "Deleting this account cannot be undone.";
 
+  public currentPage: number = 1;
+  public pageSize: number = 10;
+
   static $inject = ["accountService"];
   constructor(private accountService: AccountService) {}
 
@@ -42,13 +45,21 @@ class AccountListController implements IController {
 
   public setSort(col: keyof AccountSummary) {
     if (this.sortColumn === col) {
-      this.reverseSort = !this.reverseSort;
+      if (!this.reverseSort) {
+        // Ascending → descending
+        this.reverseSort = true;
+      } else {
+        // Descending → no sort
+        this.sortColumn = "";
+        this.reverseSort = false;
+      }
     } else {
+      // New column → ascending
       this.sortColumn = col;
       this.reverseSort = false;
     }
   }
-
+  
   public openDeleteModal(account: AccountSummary) {
     this.deleteTargetId = account.accountId;
     this.deleteTargetLabel = `${account.ownerName} - ${account.accountName}`;
@@ -70,6 +81,20 @@ class AccountListController implements IController {
         this.accounts = data;
         this.cancelDelete();
       });
+  }
+
+  public nextPage() {
+    const totalItems = this.filteredAccounts().length;
+    const maxPage = Math.ceil(totalItems / this.pageSize);
+    if (this.currentPage < maxPage) {
+      this.currentPage++;
+    }
+  }
+
+  public prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
   }
 }
 
