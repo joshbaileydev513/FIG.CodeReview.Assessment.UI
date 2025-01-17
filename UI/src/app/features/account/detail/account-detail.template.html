@@ -4,8 +4,8 @@
   
       <p><strong>Account Name:</strong> {{$ctrl.accountDetail.accountName}}</p>
       <p><strong>Owner Name:</strong> {{$ctrl.accountDetail.ownerName}}</p>
-      <!-- If you want an "owner age," you could derive from birthdate, or just show birthdate. -->
-      <p><strong>Owner Birthdate:</strong> {{$ctrl.accountDetail.ownerBirthdate}}</p>
+      <p><strong>Owner Birthdate:</strong> {{$ctrl.accountDetail.ownerBirthdate | date:'MM-dd-yyyy'}}</p>
+      <p ng-if="$ctrl.ownerAge != null"><strong>Owner Age:</strong> {{$ctrl.ownerAge}}</p>
       <p><strong>FICO Score:</strong> {{$ctrl.accountDetail.ficoScore}}</p>
   
       <p class="mt-2"><strong>Checking:</strong> {{$ctrl.accountDetail.checkingAmount | currency}}</p>
