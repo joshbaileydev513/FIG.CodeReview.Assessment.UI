@@ -1,81 +1,131 @@
 <div class="container mx-auto p-4">
     <h1 class="text-2xl font-bold mb-4">Bank Accounts</h1>
 
-    <input type="text" placeholder="Search..." class="border p-2 mb-3" ng-model="$ctrl.searchQuery" />
+    <input
+      type="text"
+      placeholder="Search..."
+      class="border p-2 mb-3"
+      ng-model="$ctrl.searchQuery"
+    />
 
-    <!-- Button to show the "Add Account" modal -->
-    <button class="bg-blue-600 text-white px-4 py-2 rounded mb-3" ng-click="$ctrl.showAddModal = true">
-        Add Account
+    <button
+      class="bg-blue-600 text-white px-4 py-2 rounded mb-3"
+      ng-click="$ctrl.showAddModal = true"
+    >
+      Add Account
     </button>
 
-    <!-- The Add Account modal, shown only when showAddModal is true -->
-    <add-account ng-if="$ctrl.showAddModal" on-close="$ctrl.showAddModal = false"
-        on-added="$ctrl.handleAccountAdded()"></add-account>
-
+    <add-account
+      ng-if="$ctrl.showAddModal"
+      on-close="$ctrl.showAddModal = false"
+      on-added="$ctrl.handleAccountAdded()"
+    ></add-account>
+  
     <table class="min-w-full bg-white shadow rounded overflow-hidden">
-        <thead>
-            <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
-                <th ng-click="$ctrl.setSort('accountName')">
-                    Account Name
-                    <span ng-if="$ctrl.sortColumn === 'accountName'">
-                        <span ng-if="!$ctrl.reverseSort">▲</span>
-                        <span ng-if="$ctrl.reverseSort">▼</span>
-                    </span>
-                </th>
-                <th ng-click="$ctrl.setSort('ownerName')">
-                    Owner Name
-                    <span ng-if="$ctrl.sortColumn === 'ownerName'">
-                        <span ng-if="!$ctrl.reverseSort">▲</span>
-                        <span ng-if="$ctrl.reverseSort">▼</span>
-                    </span>
-                </th>
-                <th ng-click="$ctrl.setSort('createdDate')">
-                    Created Date
-                    <span ng-if="$ctrl.sortColumn === 'createdDate'">
-                        <span ng-if="!$ctrl.reverseSort">▲</span>
-                        <span ng-if="$ctrl.reverseSort">▼</span>
-                    </span>
-                </th>
-                <th ng-click="$ctrl.setSort('checkingAmount')">
-                    Checking
-                    <span ng-if="$ctrl.sortColumn === 'checkingAmount'">
-                        <span ng-if="!$ctrl.reverseSort">▲</span>
-                        <span ng-if="$ctrl.reverseSort">▼</span>
-                    </span>
-                </th>
-                <th ng-click="$ctrl.setSort('savingsAmount')">
-                    Savings
-                    <span ng-if="$ctrl.sortColumn === 'savingsAmount'">
-                        <span ng-if="!$ctrl.reverseSort">▲</span>
-                        <span ng-if="$ctrl.reverseSort">▼</span>
-                    </span>
-                </th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr ng-repeat="account in $ctrl.filteredAccounts() 
-            | orderBy:$ctrl.sortColumn:$ctrl.reverseSort" class="border-b border-gray-200 hover:bg-gray-100">
-                <td>
-                    <a ui-sref="accountDetails({ accountId: account.accountId })" class="text-blue-500 hover:underline">
-                        {{account.accountName}}
-                    </a>
-                </td>
-                <td>{{account.ownerName}}</td>
-                <td>{{account.createdDate | date:'MM-dd-yyyy'}}</td>
-                <td>{{account.checkingAmount | currency}}</td>
-                <td>{{account.savingsAmount | currency}}</td>
-                <td>
-                    <button class="bg-red-500 text-white px-4 py-2 rounded" ng-click="$ctrl.openDeleteModal(account)">
-                        Delete
-                    </button>
-                </td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+          <th ng-click="$ctrl.setSort('accountName')">
+            Account Name
+            <span ng-if="$ctrl.sortColumn === 'accountName'">
+              <span ng-if="!$ctrl.reverseSort">▲</span>
+              <span ng-if="$ctrl.reverseSort">▼</span>
+            </span>
+          </th>
+          <th ng-click="$ctrl.setSort('ownerName')">
+            Owner Name
+            <span ng-if="$ctrl.sortColumn === 'ownerName'">
+              <span ng-if="!$ctrl.reverseSort">▲</span>
+              <span ng-if="$ctrl.reverseSort">▼</span>
+            </span>
+          </th>
+          <th ng-click="$ctrl.setSort('createdDate')">
+            Created Date
+            <span ng-if="$ctrl.sortColumn === 'createdDate'">
+              <span ng-if="!$ctrl.reverseSort">▲</span>
+              <span ng-if="$ctrl.reverseSort">▼</span>
+            </span>
+          </th>
+          <th ng-click="$ctrl.setSort('checkingAmount')">
+            Checking
+            <span ng-if="$ctrl.sortColumn === 'checkingAmount'">
+              <span ng-if="!$ctrl.reverseSort">▲</span>
+              <span ng-if="$ctrl.reverseSort">▼</span>
+            </span>
+          </th>
+          <th ng-click="$ctrl.setSort('savingsAmount')">
+            Savings
+            <span ng-if="$ctrl.sortColumn === 'savingsAmount'">
+              <span ng-if="!$ctrl.reverseSort">▲</span>
+              <span ng-if="$ctrl.reverseSort">▼</span>
+            </span>
+          </th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr
+          ng-repeat="account in $ctrl.filteredAccounts()
+            | orderBy:($ctrl.sortColumn || null):$ctrl.reverseSort
+            | limitTo:$ctrl.pageSize:($ctrl.currentPage - 1)*$ctrl.pageSize"
+          class="border-b border-gray-200 hover:bg-gray-100"
+        >
+          <td>
+            <a
+              ui-sref="accountDetails({ accountId: account.accountId })"
+              class="text-blue-500 hover:underline"
+            >
+              {{account.accountName}}
+            </a>
+          </td>
+          <td>{{account.ownerName}}</td>
+          <td>{{account.createdDate | date:'MM-dd-yyyy'}}</td>
+          <td>{{account.checkingAmount | currency}}</td>
+          <td>{{account.savingsAmount | currency}}</td>
+          <td>
+            <button
+              class="bg-red-500 text-white px-4 py-2 rounded"
+              ng-click="$ctrl.openDeleteModal(account)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
     </table>
-    <confirm-delete ng-if="$ctrl.showDeleteModal" item-label="$ctrl.deleteTargetLabel"
-        confirm-message="$ctrl.deleteConfirmMessage" on-cancel="$ctrl.cancelDelete()"
-        on-confirm="$ctrl.confirmDelete()">
-    </confirm-delete>
-</div>
+  
+    <div class="flex justify-end mt-4 gap-2 items-center">
+      <!-- Prev -->
+      <button
+        class="bg-gray-300 px-3 py-1 rounded"
+        ng-click="$ctrl.prevPage()"
+        ng-disabled="$ctrl.currentPage === 1"
+      >
+        Previous
+      </button>
+
+      <span>
+        Page {{$ctrl.currentPage}} of {{
+          Math.ceil($ctrl.filteredAccounts().length / $ctrl.pageSize)
+        }}
+      </span>
+
+      <button
+        class="bg-gray-300 px-3 py-1 rounded"
+        ng-click="$ctrl.nextPage()"
+        ng-disabled="($ctrl.currentPage === 
+          Math.ceil($ctrl.filteredAccounts().length / $ctrl.pageSize))"
+      >
+        Next
+      </button>
+    </div>
+
+    <confirm-delete
+      ng-if="$ctrl.showDeleteModal"
+      item-label="$ctrl.deleteTargetLabel"
+      confirm-message="$ctrl.deleteConfirmMessage"
+      on-cancel="$ctrl.cancelDelete()"
+      on-confirm="$ctrl.confirmDelete()"
+    ></confirm-delete>
+  </div>
+  
